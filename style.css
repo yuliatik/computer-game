@@ -1,0 +1,108 @@
+body {
+    background-image: url("https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=464&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    max-width: 400px; 
+    margin: 50px 0 0 30px; 
+    background-color: rgba(255, 255, 255, 0.85); 
+    border-radius: 25px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 20px;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+h1 {
+    color: #263A29;
+    font-size: 42px;
+    margin: 0;
+    font-weight: 700;
+    user-select: none;
+}
+
+.instruction {
+    color: #555;
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+    font-style: italic;
+}
+
+.div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#guess {
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1.5px solid #ccc;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#guess:focus {
+    border-color: #4CAF50;
+}
+
+#btn {
+    margin-top: 20px;
+    width: 150px;
+    padding: 15px 0;
+    border-radius: 20px;
+    background-color: #B33791;
+    font-size: 20px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover {
+    background-color: #ff9a7a;
+}
+
+@media all and (max-width: 500px) {
+    .header {
+        max-width: 90%;
+        margin-left: 5%;
+        padding: 20px;
+    }
+
+    #guess {
+        max-width: 100%;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    #btn {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px 0;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+}
