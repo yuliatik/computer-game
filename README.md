@@ -8,7 +8,7 @@ Enter a number between **21 and 51** and try to guess the number the computer pi
 
 ## 📸 DEMO
 
-![Screenshot](screensot.png)
+![Screenshot](screenshot.png)
 
 ---
 
