@@ -1,76 +1,55 @@
-const input=document.querySelector("#guess");
+const input = document.querySelector("#guess");
 const button = document.querySelector("#btn");
-const answer = Math.floor(Math.random()*50+1);
+const answer = Math.floor(Math.random() * 31 + 21); // 21-51 включительно
 
-input.addEventListener("keypress", function(e){
-    if(e.keyCode === 13){
+input.addEventListener("keypress", function(e) {
+    if(e.key === "Enter"){
         play();
     }
-})       
+});
 
 button.addEventListener("click", play);
+
 function play(){
-    const userNumber = document.querySelector("#guess").value;
-    if (userNumber < 21 || userNumber > 51) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Type the number between 21 and 51!',
-          })
-         
-      }
-      else if(isNaN(userNumber)){
+    const userNumber = Number(document.querySelector("#guess").value);
+
+    if(isNaN(userNumber)){
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Type the number!',
-            }) 
-        }
+            text: 'Type a number!',
+        });
+        return;
+    }
 
-        else{
-            if(userNumber < answer){
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong! Type the number higher!',
-                    
-                  })
-            }  
-            
-            else if(userNumber > answer){
-                Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Something went wrong! Type the number below!',
-                        
-                })
-                }
-            
-                else{
-                    Swal.fire({
-                        title: 'Congratulations!',
-                        text: 'You won!',
-                        imageUrl: 'flower.jpeg',
-                        imageWidth: 400,
-                        imageHeight: 300,
-                        
-                      })
-                }
-            }
+    if (userNumber < 21 || userNumber > 51) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Type a number between 21 and 51!',
+        });
+        return;
+    }
 
-            
-        
-        }
-      
-
-
-
-
-
-
-
-
-
-
-
-
+    if(userNumber < answer){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Type a number higher!',
+        });
+    } else if(userNumber > answer){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Type a number lower!',
+        });
+    } else {
+        Swal.fire({
+            title: 'Congratulations!',
+            text: 'You won!',
+            imageUrl: 'flower.jpeg',
+            imageWidth: 400,
+            imageHeight: 300,
+        });
+    }
+}
