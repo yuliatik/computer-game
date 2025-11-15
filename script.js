@@ -1,6 +1,8 @@
 const input = document.querySelector("#guess");
 const button = document.querySelector("#btn");
-const answer = Math.floor(Math.random() * 31 + 21); // 21-51 включительно
+
+// Генерация случайного числа от 21 до 51 включительно
+let answer = Math.floor(Math.random() * 31 + 21);
 
 input.addEventListener("keypress", function(e) {
     if(e.key === "Enter"){
@@ -11,8 +13,9 @@ input.addEventListener("keypress", function(e) {
 button.addEventListener("click", play);
 
 function play(){
-    const userNumber = Number(document.querySelector("#guess").value);
+    const userNumber = Number(input.value);
 
+    // Проверка на число
     if(isNaN(userNumber)){
         Swal.fire({
             icon: 'error',
@@ -22,6 +25,7 @@ function play(){
         return;
     }
 
+    // Проверка диапазона
     if (userNumber < 21 || userNumber > 51) {
         Swal.fire({
             icon: 'error',
@@ -31,6 +35,7 @@ function play(){
         return;
     }
 
+    // Сравнение с загаданным числом
     if(userNumber < answer){
         Swal.fire({
             icon: 'error',
@@ -50,6 +55,11 @@ function play(){
             imageUrl: 'flower.jpeg',
             imageWidth: 400,
             imageHeight: 300,
+            confirmButtonText: 'Play Again!'
+        }).then(() => {
+            // Сброс игры: очистка input и генерация нового числа
+            input.value = '';
+            answer = Math.floor(Math.random() * 31 + 21);
         });
     }
 }
