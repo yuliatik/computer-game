@@ -14,7 +14,6 @@ button.addEventListener("click", play);
 function play(){
     const userNumber = Number(input.value);
 
-    // Проверка на число
     if(isNaN(userNumber)){
         Swal.fire({
             icon: 'error',
