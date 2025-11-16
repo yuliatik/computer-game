@@ -39,7 +39,7 @@ To run the game locally:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+   git clone https://github.com/yuliatik/computer-game.git
 Open the index.html file in your browser.
 
 📌 License This project is open-source and available under the MIT License.
